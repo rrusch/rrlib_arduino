@@ -8,10 +8,7 @@
 #include <Arduino.h>
 #include <Console.h>
 #include "../../src/Pin.h"
-//#include "../../src/PinAnalogIn.h"
-//#include "../../src/PinPwmOut.h"
-//#include "../../src/PinDigitalOut.h"
-//#include "../../src/PinDigitalIn.h"
+
 
 
 
