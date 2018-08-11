@@ -41,38 +41,6 @@ Pin::Pin(uint8_t pin, int mode)
 
 void Pin::setup()
 {
-	
-	switch(this->mode)
-	{
-		case Pin::MODE_DIGITAL_OUT:
-			pinMode(this->pin, OUTPUT);
-			digitalWrite(this->pin, LOW);
-			break;
-			
-		case Pin::MODE_DIGITAL_IN:
-			pinMode(this->pin, INPUT);
-			break;
-			
-		case Pin::MODE_DIGITAL_IN_PULLDOWN:
-			pinMode(this->pin, INPUT);
-			digitalWrite(this->pin, LOW);
-			break;
-			
-		case Pin::MODE_DIGITAL_IN_PULLUP:
-			pinMode(this->pin, INPUT_PULLUP);
-			digitalWrite(this->pin, HIGH);
-			break;
-			
-		case Pin::MODE_PWM_OUT:
-			pinMode(this->pin, OUTPUT);
-			digitalWrite(this->pin, LOW);
-			break;
-			
-		case Pin::MODE_ANALOG_IN:
-		default:
-			break;
-	}
-	
 };
 
 
@@ -152,6 +120,51 @@ void Pin::setPin(uint8_t pin)
 
 void Pin::setMode(int mode)
 {
+	switch(mode)
+	{
+		case Pin::MODE_DIGITAL_OUT:
+			pinMode(this->pin, OUTPUT);
+			digitalWrite(this->pin, LOW);
+			break;
+
+		case Pin::MODE_DIGITAL_IN:
+			pinMode(this->pin, INPUT);
+			break;
+
+		case Pin::MODE_DIGITAL_IN_PULLDOWN:
+			pinMode(this->pin, INPUT);
+			digitalWrite(this->pin, LOW);
+			break;
+
+		case Pin::MODE_DIGITAL_IN_PULLUP:
+			pinMode(this->pin, INPUT_PULLUP);
+			digitalWrite(this->pin, HIGH);
+			break;
+
+		case Pin::MODE_PWM_OUT:
+			pinMode(this->pin, OUTPUT);
+			digitalWrite(this->pin, LOW);
+			break;
+
+		case Pin::MODE_ANALOG_IN:
+			pinMode(this->pin, INPUT);
+			break;
+
+		case Pin::MODE_ANALOG_IN_PULLDOWN:
+			pinMode(this->pin, INPUT);
+			digitalWrite(this->pin, LOW);
+			break;
+
+		case Pin::MODE_ANALOG_IN_PULLUP:
+			pinMode(this->pin, INPUT_PULLUP);
+			digitalWrite(this->pin, HIGH);
+			break;
+
+		default:
+			mode=Pin::MODE_UNDEF;
+			break;
+	}
+
 	this->mode=mode;
 };
 

@@ -59,6 +59,8 @@ public:
 	const static int MODE_DIGITAL_IN_PULLUP=4;
 	const static int MODE_PWM_OUT=5;
 	const static int MODE_ANALOG_IN=6;
+	const static int MODE_ANALOG_IN_PULLDOWN=7;
+	const static int MODE_ANALOG_IN_PULLUP=8;
 	
 	const static int VALUE_UNDEF=-1;
 	const static int VALUE_LOW=0;
